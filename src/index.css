@@ -1,13 +1,422 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+ /*Global Styling*/
+ body {
+  margin: 0%;
+  scroll-behavior: smooth;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: #1D1E22;
+  color: #FFF;
+  font-family: 'Poppins', sans-serif;
+  line-height: normal;
+  font-weight: normal;
+}
+ body.active.modal{
+  overflow-y: hidden;
+ }
+ .back_btn{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 40px;
+    height: 40px;
+    background-image: url(./Images/eva_arrow-back-outline.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+ .back_btn:hover{
+   background-image: url(./Images/eva_arrow-back-outline_colour.png);
+ }
+ button{
+  background: none;
+ }
+ .page_heading{
+  margin: 4% auto;
+  color: #FFF;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+ }
+ /*Background Styling*/
+ .background {
+  display: fixed;
+  width: 100%;
+  position: absolute;
+ }
+.linearbox1,.linearbox2{
+  position: fixed;
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  background: rgba(6, 125, 113, 0.60);
+  filter: blur(150px);
+  animation: glow 5s infinite alternate;
+}
+@keyframes glow {
+  from {
+    box-shadow: 0px 0px 10px -5px rgba(6, 125, 113, 0.60);
+  }
+  to {
+    box-shadow: 0px 0px 10px 5px rgba(6, 125, 113, 0.60);
+  }
+}
+.linearbox1{
+  top: -10%;
+  left: -25%;
+}
+.linearbox2{
+  bottom: -30%;
+  left: 80%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ /*Landing Page Styling*/
+.landing_page-con{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 10% auto;
+   width: 50%;
+}
+.logo_con{
+   width: 440px;
+   height: 200px;
+   background-image: url(./Images/Logo.png);
+   background-position: center;
+   background-size: cover;
+   margin: 3% auto 5%;
+}
+.landing_page_button_con{
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lan_button{
+  width: 40%;
+  padding: 2% 0%;
+  border-radius: 5px;
+  background: #1E9B90;;
+  cursor: pointer;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  border-style: none;
+  border: 2px solid #1E9B90;
+}
+.lan_button:hover{
+  color: #1E9B90;
+  background: none;
+}
+.footer_name{
+  width: 100%;
+  padding: .5% 0%;
+  text-align: center;
+}
+.footer_title{
+  font-weight: 250;
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  opacity: .5;
+}
+.footer_title:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+ /*Popup Styling*/
+ .modal,.overlay{
+  width: 100vw;
+  height: 100vh;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+ }
+ .overlay{
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px);
+ }
+ .popup_con{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  border-radius: 10px;
+  background: #1E9B90;
+  padding: 3%;
+  transform: translate(-50%, -50%);
+ }
+ .popup_heading{
+  color: #1B1F29;
+  font-size: 35px;
+  font-weight: 900;
+ }
+.popup_button_con{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+button{
+  border-style: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.popup_button{
+  width: 35%;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 5%;
+  text-decoration: none;
+}
+.primary{
+  background: #1B1F29;
+  color: #1E9B90;
+  padding: 3% 0%;
+}
+.secondary{
+  color: #1B1F29;
+  padding: 3% 0%;
+  background: none;
+  border: 2px solid #1B1F29;
+}
+ /*Enter Player Name Popup Styling*/
+ .enter_player_con{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+ }
+ .input,.bio{
+  margin: 5% 0% 8%;
+  width: 80%;
+  border-radius: 5px;
+  text-indent: 10px;
+  padding: 2% 1.5%;
+  background: rgba(217, 217, 217, 0.70);
+  color: #1B1F29;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  outline: none;
+}
+/*More Info Popup Styling*/
+.more_info_con{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+/*Quit Game Pop up*/
+.quit_game_heading{
+  font-size: 24px;
+  color: #1B1F29;
+  font-weight: 700;
+  margin: 5% auto 8%;
+}
+.moreinfo_content_con{
+margin-top: 5%;
+color: #1B1F29;
+text-align: center;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+text-align: center;
+padding: 5%;
+border-radius: 20px;
+border: 2px solid #1B1F29;
+}
+.close_btn{
+  background-image: url(./Images/Vector.png);
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  height: 15px;
+  cursor: pointer;
+  background-color: #1E9B90;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/*Dashboard Page Styling*/
+.profile_con{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content:flex-end;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  cursor: pointer;
+}
+.profile_btn{
+  width: 30px;
+  height: 30px;
+  background-image: url(./Images/iconamoon_profile-circle-fill.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right:5px;
+}
+.prfoile_name{
+  color: #FFF;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+}
+.profile_con:hover{
+  .profile_btn{
+    background-image: url(./Images/iconamoon_profile-circle-fill_colour.png);
+  }
+  .prfoile_name{
+    color: #1E9B90;
+  }
+}
+.options:hover{
+  color: #1E9B90;
+  transform: scale(1.1,1.1);
+}
+.dash_logo{
+  margin-top: 10%;
+}
+.options_con{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  margin: 7% auto 0%;
+}
+.options{
+  cursor: pointer;
+  display: flex;
+  color: #FFF;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  transition-duration: 0.2s;
+}
+.option_bg{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #1E9B90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.option_icon{
+  width: 25px;
+  height: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon1{
+  background-image: url(./Images/iconamoon_player-play-fill.png);
+}
+.icon2{
+  background-image: url(./Images/./fluent_line-horizontal-3-20-filled.png);
+}
+.icon3{
+  background-image: url(./Images/fluent_question-16-filled.png);
+}
+.icon4{
+  width: 20px;
+  height: 20px;
+  background-image: url(./Images/i.png);
+  background-size: contain;
+}
+.icon5{
+  background-image: url(./Images/pepicons-pop_power.png);
+}
+.option_name{
+  margin-top: 15%;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 250;
+}
+.about{
+  margin-top: 30%;
+}
+/* Select Level Page Styling*/
+.select_level_con{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  align-items: center;
+  width: 45%;
+  margin: 5% auto;
+  justify-content: space-between;
+}
+.levels{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #1E9B90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25% auto;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+.levels:hover{
+  transform: scale(1.1,1.1);
+}
+.level_no{
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+}
+/*About Page Styling*/
+.content,.howtoplay{
+font-size: 16px;
+font-style: normal;
+font-weight: 250;
+width: 50%;
+margin: 5% auto;
+text-align: center;
+line-height: normal;
+}
+/*profile Page Styling*/
+.profilepage_img{
+  width: 106px;
+  height: 106px;
+  background-image: url(./Images/Vector_big.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0% auto;
+}
+.profilepage_name{
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+}
+.profilepage_bio{
+  width: 30%;
+  margin: 1% auto;
+  opacity: .5;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+/*How to Play Page*/
+.howtoplay{
+  text-align: left;
+}
+.list{
+  margin: 3%  0%;
 }
