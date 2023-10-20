@@ -1,4 +1,6 @@
 Our project aims to develop a gaming website (Call of Creative) for students and developers who can learn UI/UX design by playing this game. While encouraging strategy, skill development, and a sense of accomplishment, the game is made to provide enjoyment, excitement, and much knowledge about UI/UX Design.
+
+Access the site by https://tubular-pavlova-3483fe.netlify.app/
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
