@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {useNavigate} from "react-router-dom";
+
 const Landingpage = () => {
     const navigate = useNavigate();
 
@@ -27,9 +28,9 @@ const Landingpage = () => {
             <div className='modal'>
             <div className='overlay'>
                 <div className='enter_player_con popup_con'>
-                    <div className='popup_heading'>Enter your Details</div>
-                    <input className='input' id='input' type='text' placeholder='Enter Your Name' autoComplete="off" value={name} onChange={(event)=>setName(event.target.value)}/>
-                    <input className='bio' id='input' type='text' placeholder='Enter Your Bio' autoComplete="off" value={bio} onChange={(event)=>setBio(event.target.value)}/>
+                    <div className='popup_heading ep'>Enter your Details</div>
+                    <input className='input' id='name-input' type='text' placeholder='Enter Your Name' autoComplete="off" value={name} onChange={(event)=>setName(event.target.value)}/>
+                    <input className='bio' id='bio-input' type='text' placeholder='Enter Your Bio' autoComplete="off" value={bio} onChange={(event)=>setBio(event.target.value)}/>
                     <div className='popup_button_con'>
                     <button className='popup_button primary' onClick={()=>{navigate('/Dashboard',{state:{name, bio}})}}>Ok</button>
                     <button className='popup_button secondary' onClick={toggleEnterplayer} >Cancel</button>

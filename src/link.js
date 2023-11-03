@@ -29,9 +29,9 @@ const Link = () => {
         <Route path='/Dashboard/About' element={<About/>} exact/>
         <Route path='/Dashboard/Profile' element={<Profile/>} exact/>
         <Route path='/Dashboard/Level1' element={<Level1/>} exact/>
-        <Route path='/Dashboard/Level2' element={<Level2/>} exact/>
-        <Route path='/Dashboard/Level3' element={<Level3/>} exact/>
-        <Route path='/Dashboard/Level4' element={<Level4/>} exact/>
+        <Route path='/Dashboard/Level2' element={<Level4/>} exact/>
+        <Route path='/Dashboard/Level3' element={<Level2/>} exact/>
+        <Route path='/Dashboard/Level4' element={<Level3/>} exact/>
         <Route path='/Dashboard/Level5' element={<Level5/>} exact/>
         <Route path='/Dashboard/Level6' element={<Level6/>} exact/>
         <Route path='/Dashboard/Level7' element={<Level7/>} exact/>
