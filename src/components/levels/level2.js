@@ -106,7 +106,7 @@ const Level2 = () => {
     let third= document.getElementById('l2b3').querySelector("img").getAttribute("name");
     let four= document.getElementById('l2b4').querySelector("img").getAttribute("name");
 
-        if(first==='1' && second==='2' && third==='3' && four=='4'){  
+        if(first==='1' && second==='2' && third==='3' && four==='4'){  
             toggleWin();
           }
           else{

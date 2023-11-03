@@ -40,7 +40,6 @@ const Level5 = () => {
     const[box5, setBox5] = useState([]);
     const[box6, setBox6] = useState([]);
     const[box7, setBox7] = useState([]);
-    const[box8, setBox8] = useState([]);
 
     const [{}, drop1] = useDrop(() => ({
         accept: "image",
