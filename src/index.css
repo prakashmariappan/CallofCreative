@@ -50,6 +50,7 @@
   background: #6F6F6F;
   cursor: pointer;
  }
+
  /*Background Styling*/
  .background {
   display: fixed;
@@ -138,6 +139,7 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
  /*Popup Styling*/
  .modal,.overlay{
   width: 100vw;
@@ -200,22 +202,33 @@ button{
   background: none;
   border: 2px solid #1B1F29;
 }
+
  /*Enter Player Name Popup Styling*/
  .enter_player_con{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  position: absolute;
  }
  .ep{
   margin-bottom: 5%;
  }
- 
- /*label{
-  color: #1B1F29;
- }*/
+ label{
+  position: relative;
+  color: rgb(197, 0, 0);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+ }
+ .label_name{
+  right: 23%;
+ }
+ .label_bio{
+  right: 25%;
+ }
  #name-input,#bio-input{
-  margin: 2% 0% 8%;
+  margin-top: 5%;
   width: 80%;
   border-radius: 5px;
   text-indent: 10px;
@@ -225,9 +238,13 @@ button{
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  border: none;
+  border: hidden;
   outline: none;
 }
+.ep_btn{
+  margin-top: 10%;
+}
+
 /*More Info Popup Styling*/
 .more_info_con{
   display: flex;
@@ -235,6 +252,7 @@ button{
   flex-direction: column;
   justify-content: space-around;
 }
+
 /*Quit Game Pop up*/
 .quit_game_heading{
   font-size: 24px;
@@ -266,6 +284,7 @@ border: 2px solid #1B1F29;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 /*Dashboard Page Styling*/
 .profile_con{
   display: flex;
@@ -367,6 +386,7 @@ border: 2px solid #1B1F29;
 .about{
   margin-top: 30%;
 }
+
 /* Select Level Page Styling*/
 .select_level_con{
   display: grid;
@@ -397,6 +417,7 @@ border: 2px solid #1B1F29;
   font-style: normal;
   font-weight: 600;
 }
+
 /*About Page Styling*/
 .content,.howtoplay{
 font-size: 16px;
@@ -407,6 +428,7 @@ margin: 5% auto;
 text-align: center;
 line-height: normal;
 }
+
 /*profile Page Styling*/
 .profilepage_img{
   width: 106px;
@@ -440,6 +462,7 @@ line-height: normal;
 .list{
   margin: 3%  0%;
 }
+
 /*Navbar Component*/
 .navbar{
   border-bottom: 2px solid #FFF;
@@ -447,6 +470,15 @@ line-height: normal;
   margin: auto;
   display: flex;
   align-items: center;
+  position: relative;
+  justify-content: space-between;
+}
+.nav_left,.nav_right{
+  width: 15%;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
   position: relative;
 }
 .nav_logo{
@@ -458,10 +490,8 @@ line-height: normal;
   margin: 2% auto;
 }
 .eye_icon{
-  position: absolute;
   width: 25px;
   height: 25px;
-  right: 5%;
   background-image: url(./Images/eye.png);
   background-position: center;
   background-size: cover;
@@ -472,6 +502,38 @@ line-height: normal;
 .eye_icon:hover{
   transform: scale(1.2,1.2);
   background-image: url(./Images/eye_hover.png);
+}
+.timg_btn{
+  margin-top: 2px;
+  width: 25px;
+  height: 25px;
+  background-image: url(./Images/info.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+.timg_btn:hover{
+  transform: scale(1.2,1.2);
+  background-image: url(./Images/info\ _hover.png);
+}
+.refimge_con{
+  background-color: #D9D9D9;
+  position: absolute;
+  top: 150%;
+  right: 50% ;
+  width: 100%;
+  z-index: 1000;
+  padding: 5px;
+  border: 5px solid #1E9B90;
+  border-radius: 5px;
+}
+.ref_img{
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 /*Level Page Styling*/
 .box_con{

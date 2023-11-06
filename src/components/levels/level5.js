@@ -3,8 +3,13 @@ import Data from '../../data';
 import Picture from './picture';
 import { useDrop } from 'react-dnd';
 import { useNavigate } from 'react-router-dom';
+import ImageComponent from '../../refimage';
+import image from '../../Images/Level_5/ref.png';
 
 const Level5 = () => {
+    //Image Component value
+    const imageSrc = image;
+    
     //tryagian or play agian function
     const navigate = useNavigate();
     const tryagain = () => {
@@ -21,132 +26,65 @@ const Level5 = () => {
         setloseModal(!losemodal)
     }
 
-    //eye function 
-    const [line, setline] = useState(false);
-    function showlinefun(){ 
-        setline(line => !line);
-    }
-    let showline = line? 'show':'hide';
-
-    function hidelinefun(){
-        setline(line => !line);
-    }
+ //eye function 
+ const [line, setline] = useState(false);
+ function showlinefun() { 
+     setline((line) => !line); // Use a callback to ensure you get the updated value
+ }
+ function hidelinefun(){
+     setline((line) => !line);
+ }
+ let showline = line? 'show':'hide';
     
-    //Drop function
-    const[box1, setBox1] = useState([]);
-    const[box2, setBox2] = useState([]);
-    const[box3, setBox3] = useState([]);
-    const[box4, setBox4] = useState([]);
-    const[box5, setBox5] = useState([]);
-    const[box6, setBox6] = useState([]);
-    const[box7, setBox7] = useState([]);
-
-    const [{}, drop1] = useDrop(() => ({
-        accept: "image",
-        drop: (item) => addImagetoBox1(item.key),
-      }));
-    
-   function addImagetoBox1(key){
-        const data = Data.level5.filter((picture)=> key === picture.id);
-        setBox1([data[0]]);   
-    };
-    //////////
-    const [{},drop2] = useDrop(() => ({
-        accept: "image",
-        drop: (item) => addImagetoBox2(item.key),
-      }));
-    
-   function addImagetoBox2(key){
-        const data = Data.level5.filter((picture)=> key === picture.id);
-        setBox2([data[0]]);   
-    };
-    //////////
-    const [{},drop3] = useDrop(() => ({
-        accept: "image",
-        drop: (item) => addImagetoBox3(item.key),
-      }));
-    
-   function addImagetoBox3(key){
-        const data = Data.level5.filter((picture)=> key === picture.id);
-        setBox3([data[0]]);   
-    };
-    //////////
-    const [{},drop4] = useDrop(() => ({
-        accept: "image",
-        drop: (item) => addImagetoBox4(item.key),
-      }));
-    
-   function addImagetoBox4(key){
-        const data = Data.level5.filter((picture)=> key === picture.id);
-        setBox4([data[0]]);   
-    };
-    //////////
-    const [{},drop5] = useDrop(() => ({
-        accept: "image",
-        drop: (item) => addImagetoBox5(item.key),
-      }));
-    
-   function addImagetoBox5(key){
-        const data = Data.level5.filter((picture)=> key === picture.id);
-        setBox5([data[0]]);   
-    };
-    //////////
-    const [{},drop6] = useDrop(() => ({
-        accept: "image",
-        drop: (item) => addImagetoBox6(item.key),
-      }));
-    
-   function addImagetoBox6(key){
-        const data = Data.level5.filter((picture)=> key === picture.id);
-        setBox6([data[0]]);   
-    };
-    //////////
-    const [{},drop7] = useDrop(() => ({
-        accept: "image",
-        drop: (item) => addImagetoBox7(item.key),
-      }));
-    
-   function addImagetoBox7(key){
-        const data = Data.level5.filter((picture)=> key === picture.id);
-        setBox7([data[0]]);   
-    };
-    //////////
-    
-
-    //checking the dropbox for image function
-    function checkimg(){
-    let firstbox= document.getElementById('l5b1');
-    let secondbox= document.getElementById('l5b2');
-    let thirdbox= document.getElementById('l5b3');
-    let fourbox= document.getElementById('l5b4');
-    let fivebox= document.getElementById('l5b5');
-    let sixbox= document.getElementById('l5b6');
-    let sevenbox= document.getElementById('l5b7');
-
-    let firstno= !firstbox.querySelector('img');
-    let secondno= !secondbox.querySelector('img');
-    let thirdno= !thirdbox.querySelector('img');   
-    let fourno= !fourbox.querySelector('img');
-    let fiveno= !fivebox.querySelector('img');
-    let sixno= !sixbox.querySelector('img');
-    let sevenno= !sevenbox.querySelector('img');     
-    if(firstno || secondno || thirdno || fourno || fiveno || sixno || sevenno){
-        alert('Please arrange all the Images and Try Again');
-    }
-    else{
-        evaluation();
-    }
-    }
+     //Drop function
+     const[box1, setBox1] = useState([]);
+     const[box2, setBox2] = useState([]);
+     const[box3, setBox3] = useState([]);
+     const[box4, setBox4] = useState([]);
+     const[box5, setBox5] = useState([]);
+     const[box6, setBox6] = useState([]);
+     const[box7, setBox7] = useState([]);
+ 
+     function useDropForBox(box, setBox) {
+         const [{}, drop] = useDrop(() => ({
+             accept: "image",
+             drop: (item) => addImagetoBox(item.key),
+         }));
+     
+         function addImagetoBox(key) {
+             const data = Data.level5.filter((picture) => key === picture.id);
+             setBox([...box,data[0]]);
+         }
+     
+         return drop;
+     }
+     
+     const drop1 = useDropForBox(box1, setBox1);
+     const drop2 = useDropForBox(box2, setBox2);
+     const drop3 = useDropForBox(box3, setBox3);
+     const drop4 = useDropForBox(box4, setBox4);
+     const drop5 = useDropForBox(box5, setBox5);
+     const drop6 = useDropForBox(box6, setBox6);
+     const drop7 = useDropForBox(box7, setBox7);
+ 
+     //checking the dropbox for image function
+     function checkimg() {
+     if (box1.length === 0 || box2.length === 0 || box3.length === 0 || box4.length === 0 || box5.length === 0 || box6.length === 0 || box7.length === 0)  {
+         alert('Please arrange all the images and Try Again');
+     } else {
+         evaluation();
+     }
+     };
 
     //evaluation function
     function evaluation(){
-    let first= document.getElementById('l5b1').querySelector("img").getAttribute("name");
-    let second= document.getElementById('l5b2').querySelector("img").getAttribute("name");
-    let third= document.getElementById('l5b3').querySelector("img").getAttribute("name");
-    let four= document.getElementById('l5b4').querySelector("img").getAttribute("name");
-    let five= document.getElementById('l5b5').querySelector("img").getAttribute("name");
-    let six= document.getElementById('l5b6').querySelector("img").getAttribute("name");
-    let seven= document.getElementById('l5b7').querySelector("img").getAttribute("name");
+    let first= document.getElementById('l5b1').querySelector("img").getAttribute("data-name");
+    let second= document.getElementById('l5b2').querySelector("img").getAttribute("data-name");
+    let third= document.getElementById('l5b3').querySelector("img").getAttribute("data-name");
+    let four= document.getElementById('l5b4').querySelector("img").getAttribute("data-name");
+    let five= document.getElementById('l5b5').querySelector("img").getAttribute("data-name");
+    let six= document.getElementById('l5b6').querySelector("img").getAttribute("data-name");
+    let seven= document.getElementById('l5b7').querySelector("img").getAttribute("data-name");
 
         if(first==='1' && second==='2' && third==='3' && four==='4' && five==='5' && six==='6' && seven==='7'){  
             toggleWin();
@@ -159,9 +97,13 @@ const Level5 = () => {
     //naviagto to dashbaord page function
     return (
         <>
-        <div className='navbar'>
+       <div className='navbar'>
+            <div className='nav_left'></div>
             <div className='nav_logo'></div>
+            <div className='nav_right'>
+            <ImageComponent src={imageSrc}/>
             <button  onMouseEnter={showlinefun} onMouseLeave={hidelinefun} className='eye_icon navicon'></button>
+            </div>      
         </div>
         <div className='box_con'>
             <div className='drop_box'>

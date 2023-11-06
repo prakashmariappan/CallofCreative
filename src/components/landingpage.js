@@ -12,8 +12,24 @@ const Landingpage = () => {
     const toggleMoreInfo =()=>{
         setmoreinfoModal(!moreinfomodal)
     }
-    const [name,setName]= useState('');
-    const [bio,setBio]= useState('');
+    
+        const [name,setName]= useState('');
+        const [bio,setBio]= useState('');
+        const [errorName, setErrorName] = useState('');
+        const [errorBio, setErrorBio] = useState('');
+        const handleButtonClick = () => {
+          if (name.trim() === ''){
+            setErrorName('Please enter Name');
+          }
+          if (bio.trim() === ''){
+            setErrorBio('Please enter Bio');
+          } 
+          else{
+            navigate('/Dashboard',{state:{name, bio}}); 
+          }
+        };
+          
+
     return (
         <> 
         <div className='landing_page-con'>
@@ -29,10 +45,18 @@ const Landingpage = () => {
             <div className='overlay'>
                 <div className='enter_player_con popup_con'>
                     <div className='popup_heading ep'>Enter your Details</div>
-                    <input className='input' id='name-input' type='text' placeholder='Enter Your Name' autoComplete="off" value={name} onChange={(event)=>setName(event.target.value)}/>
-                    <input className='bio' id='bio-input' type='text' placeholder='Enter Your Bio' autoComplete="off" value={bio} onChange={(event)=>setBio(event.target.value)}/>
-                    <div className='popup_button_con'>
-                    <button className='popup_button primary' onClick={()=>{navigate('/Dashboard',{state:{name, bio}})}}>Ok</button>
+                    <input id='name-input' type='text' placeholder='Enter Your Name' autoComplete="off" value={name} onChange={(e) => {
+          setName(e.target.value);
+          setErrorName(''); // Clear error message when the user types
+        }}/>
+        <label className='label_name'>{errorName}</label>
+                    <input id='bio-input' type='text' placeholder='Enter Your Bio' autoComplete="off" value={bio} onChange={(e) => {
+          setBio(e.target.value);
+          setErrorBio(''); // Clear error message when the user types
+        }}/>
+        <label className='label_bio'>{errorBio}</label>
+                    <div className='popup_button_con ep_btn'>
+                    <button className='popup_button primary' onClick={handleButtonClick}>Ok</button>
                     <button className='popup_button secondary' onClick={toggleEnterplayer} >Cancel</button>
                     </div>
                 </div>
