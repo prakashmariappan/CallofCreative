@@ -109,41 +109,41 @@ const Level5 = () => {
             <div className='drop_box'>
                 <div className={showline} name='box'  id='l5b1' ref={drop1}>
                 {box1.map((picture) => {
-                    return <Picture id={picture.id} key={picture.id} name={picture.name} image={picture.image}/>;
+                    return <Picture id={picture.id} key={picture.id} data-name={picture.name} image={picture.image}/>;
                 })}     
                 </div>             
                 <div className='level5_row'>   
                 <div className={showline} name='box' id='l5b2' ref={drop2}>
                 {box2.map((picture) => {
-                    return <Picture id={picture.id} key={picture.id} name={picture.name} image={picture.image}/>;
+                    return <Picture id={picture.id} key={picture.id} data-name={picture.name} image={picture.image}/>;
                 })}     
                 </div>
                 <div className={showline} name='box' id='l5b3' ref={drop3}>
                 {box3.map((picture) => {
-                    return <Picture id={picture.id} key={picture.id} name={picture.name} image={picture.image}/>;
+                    return <Picture id={picture.id} key={picture.id} data-name={picture.name} image={picture.image}/>;
                 })}     
                 </div>
                 <div className='level5_para'>
                 <div className={showline} name='box'  id='l5b4' ref={drop4}>
                 {box4.map((picture) => {
-                    return <Picture id={picture.id} key={picture.id} name={picture.name} image={picture.image}/>;
+                    return <Picture id={picture.id} key={picture.id} data-name={picture.name} image={picture.image}/>;
                 })}     
                 </div>        
                 <div className={showline} name='box' id='l5b5' ref={drop5}>
                 {box5.map((picture) => {
-                    return <Picture id={picture.id} key={picture.id} name={picture.name} image={picture.image}/>;
+                    return <Picture id={picture.id} key={picture.id} data-name={picture.name} image={picture.image}/>;
                 })}     
                 </div>
                 </div>   
                 <div className={showline} name='box' id='l5b6' ref={drop6}>
                 {box6.map((picture) => {
-                    return <Picture id={picture.id} key={picture.id} name={picture.name} image={picture.image}/>;
+                    return <Picture id={picture.id} key={picture.id} data-name={picture.name} image={picture.image}/>;
                 })}     
                 </div>
                 </div>
                 <div className={showline} name='box' id='l5b7' ref={drop7}>
                 {box7.map((picture) => {
-                    return <Picture id={picture.id} key={picture.id} name={picture.name} image={picture.image}/>;
+                    return <Picture id={picture.id} key={picture.id} data-name={picture.name} image={picture.image}/>;
                 })}     
                 </div>    
             </div>
@@ -151,7 +151,7 @@ const Level5 = () => {
             <div className='drag_box'>  
             <div className='drag_con'>
                 {Data.level5.map((picture)=>{
-                return <Picture  id={picture.id} key={picture.id} name={picture.name} image={picture.image}/>;
+                return <Picture  id={picture.id} key={picture.id} data-name={picture.name} image={picture.image}/>;
             })}
             </div>
             </div> 

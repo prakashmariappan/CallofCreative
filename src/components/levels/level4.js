@@ -97,17 +97,17 @@ const Level4 = () => {
             <div className='drop_box'>
                 <div className='row'>
                     
-                <div className={showline} name='box'  id='l4b1' ref={drop1}>
+                <div className={showline} data-name='box'  id='l4b1' ref={drop1}>
                 {box1.map((picture) => {
                     return <Picture id={picture.id} key={picture.id} name={picture.name} image={picture.image}/>;
                 })}     
                 </div>        
-                <div className={showline} name='box' id='l4b2' ref={drop2}>
+                <div className={showline} data-name='box' id='l4b2' ref={drop2}>
                 {box2.map((picture) => {
                     return <Picture id={picture.id} key={picture.id} name={picture.name} image={picture.image}/>;
                 })}      
                 </div>  
-                <div className={showline} name='box' id='l4b3' ref={drop3}>
+                <div className={showline} data-name='box' id='l4b3' ref={drop3}>
                 {box3.map((picture) => {
                     return <Picture id={picture.id}key={picture.id} name={picture.name} image={picture.image}/>;
                 })}     

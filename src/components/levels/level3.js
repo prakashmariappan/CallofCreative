@@ -9,7 +9,7 @@ import image from '../../Images/Level_3/ref.png';
 const Level3 = () => {
     //Image Component value
     const imageSrc = image;
-    
+
     //tryagian or play agian function
     const navigate = useNavigate();
     const tryagain = () => {
@@ -107,38 +107,38 @@ const Level3 = () => {
         </div>
         <div className='box_con'>
             <div className='drop_box'>
-                <div className={showline} name='box'  id='l3b1' ref={drop1}>
+                <div className={showline} data-name='box'  id='l3b1' ref={drop1}>
                 {box1.map((picture) => {
                     return <Picture id={picture.id} key={picture.id} name={picture.name} image={picture.image}/>;
                 })}     
                 </div>             
                 <div className='flex_row'>   
-                <div className={showline} name='box' id='l3b2' ref={drop2}>
+                <div className={showline} data-name='box' id='l3b2' ref={drop2}>
                 {box2.map((picture) => {
                     return <Picture id={picture.id} key={picture.id} name={picture.name} image={picture.image}/>;
                 })}     
                 </div>
-                <div className={showline} name='box' id='l3b3' ref={drop3}>
+                <div className={showline} data-name='box' id='l3b3' ref={drop3}>
                 {box3.map((picture) => {
                     return <Picture id={picture.id} key={picture.id} name={picture.name} image={picture.image}/>;
                 })}     
                 </div>
-                <div className={showline} name='box'  id='l3b4' ref={drop4}>
+                <div className={showline} data-name='box'  id='l3b4' ref={drop4}>
                 {box4.map((picture) => {
                     return <Picture id={picture.id} key={picture.id} name={picture.name} image={picture.image}/>;
                 })}     
                 </div>        
-                <div className={showline} name='box' id='l3b5' ref={drop5}>
+                <div className={showline} data-name='box' id='l3b5' ref={drop5}>
                 {box5.map((picture) => {
                     return <Picture id={picture.id} key={picture.id} name={picture.name} image={picture.image}/>;
                 })}     
                 </div>   
-                <div className={showline} name='box' id='l3b6' ref={drop6}>
+                <div className={showline} data-name='box' id='l3b6' ref={drop6}>
                 {box6.map((picture) => {
                     return <Picture id={picture.id} key={picture.id} name={picture.name} image={picture.image}/>;
                 })}     
                 </div>
-                <div className={showline} name='box' id='l3b7' ref={drop7}>
+                <div className={showline} data-name='box' id='l3b7' ref={drop7}>
                 {box7.map((picture) => {
                     return <Picture id={picture.id} key={picture.id} name={picture.name} image={picture.image}/>;
                 })}     
@@ -149,7 +149,7 @@ const Level3 = () => {
             <div className='drag_box'>  
             <div className='drag_con'>
                 {Data.level3.map((picture)=>{
-                return <Picture  id={picture.id} key={picture.id} name={picture.name} image={picture.image}/>;
+                return <Picture  id={picture.id}  data-name={picture.name} image={picture.image}/>;
             })}
             </div>
             </div> 
