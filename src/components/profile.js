@@ -9,7 +9,7 @@ const Profile = () => {
 
     return (
         <>
-            <button className='back_btn' onClick={() => navigate(-1)}>Back</button>
+            <button className='back_btn' onClick={() => navigate(-1)}></button>
             <div className='page_heading'>Profile</div>
             <div className='profilepage_img'></div>
             <div className='profilepage_name'>{name}</div>

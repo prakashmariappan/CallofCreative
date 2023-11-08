@@ -19,10 +19,10 @@ const Landingpage = () => {
         const [errorBio, setErrorBio] = useState('');
         const handleButtonClick = () => {
           if (name.trim() === ''){
-            setErrorName('Please enter Name');
+            setErrorName('Please enter your name');
           }
           if (bio.trim() === ''){
-            setErrorBio('Please enter Bio');
+            setErrorBio('Please enter your Bio');
           } 
           else{
             navigate('/Dashboard',{state:{name, bio}}); 
@@ -45,16 +45,17 @@ const Landingpage = () => {
             <div className='overlay'>
                 <div className='enter_player_con popup_con'>
                     <div className='popup_heading ep'>Enter your Details</div>
+                    <label className='label_name'>{errorName}</label>
                     <input id='name-input' type='text' placeholder='Enter Your Name' autoComplete="off" value={name} onChange={(e) => {
           setName(e.target.value);
           setErrorName(''); // Clear error message when the user types
         }}/>
-        <label className='label_name'>{errorName}</label>
+                    <label className='label_bio'>{errorBio}</label>
                     <input id='bio-input' type='text' placeholder='Enter Your Bio' autoComplete="off" value={bio} onChange={(e) => {
           setBio(e.target.value);
           setErrorBio(''); // Clear error message when the user types
         }}/>
-        <label className='label_bio'>{errorBio}</label>
+        
                     <div className='popup_button_con ep_btn'>
                     <button className='popup_button primary' onClick={handleButtonClick}>Ok</button>
                     <button className='popup_button secondary' onClick={toggleEnterplayer} >Cancel</button>

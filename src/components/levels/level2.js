@@ -64,7 +64,7 @@ const Level2 = () => {
      //checking the dropbox for image function
      function checkimg() {
      if (box1.length === 0 || box2.length === 0 || box3.length === 0 || box4.length === 0)  {
-         alert('Please arrange all the images and Try Again');
+         alert('Please arrange all the Images and Try Again');
      } else {
          evaluation();
      }
@@ -89,7 +89,9 @@ const Level2 = () => {
     return (
         <>
        <div className='navbar'>
-            <div className='nav_left'></div>
+            <div className='nav_left'>
+            <button className='nav_backbtn' onClick={() => navigate(-1)}></button>
+            </div>
             <div className='nav_logo'></div>
             <div className='nav_right'>
             <ImageComponent src={imageSrc}/>

@@ -17,8 +17,6 @@ const Level1 = () => {
    function hidelinefun(){
        setline((line) => !line);
    } 
-    //Image Component value
-    const imageSrc = image;
 
     //tryagian or play agian function
     const navigate = useNavigate();
@@ -32,12 +30,10 @@ const [losemodal, setloseModal] = useState(false);
 
 const toggleWin = () => {
     setwinModal(!winmodal);
-    setloseModal(!winmodal);
 };
 
 const toggleLose = () => {
     setloseModal(!losemodal);
-    setwinModal(!losemodal);
 };
     
     //Drop function
@@ -67,18 +63,18 @@ const toggleLose = () => {
     //checking the dropbox for image function
     function checkimg() {
     if (box1.length === 0 || box2.length === 0 || box3.length === 0) {
-        alert('Please arrange all the images and Try Again');
+        alert('Please arrange all the Images and Try Again');
     } else {
         evaluation();
     }
 };
     //evaluation function
     function evaluation(){
-    let first= document.getElementById('l1b1').querySelector("img").getAttribute("name");
-    let second= document.getElementById('l1b2').querySelector("img").getAttribute("name");
-    let third= document.getElementById('l1b3').querySelector("img").getAttribute("name");
-
-        if(first==='1' && second==='2' && third==='3'){  
+    let first= document.getElementById('l1b1').querySelector("img").getAttribute("data-name");
+    let second= document.getElementById('l1b2').querySelector("img").getAttribute("data-name");
+    let third= document.getElementById('l1b3').querySelector("img").getAttribute("data-name");
+        console.log(first,second,third)
+        if(first ==='1' && second ==='2' && third ==='3'){  
             toggleWin();
           }
           else{
@@ -89,7 +85,9 @@ const toggleLose = () => {
     return (
         <>
         <div className='navbar'>
-        <div className='nav_left'></div>
+        <div className='nav_left'>
+        <button className='nav_backbtn' onClick={() => navigate(-1)}></button>
+        </div>
         <div className='nav_logo'></div>
         <div className='nav_right'>
         <ImageComponent src={image}/>

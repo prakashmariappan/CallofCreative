@@ -14,16 +14,18 @@
  body.active.modal{
   overflow-y: hidden;
  }
+ .nav_backbtn,.back_btn{
+  width: 40px;
+  height: 40px;
+  background-image: url(./Images/eva_arrow-back-outline.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
  .back_btn{
     position: absolute;
     top: 10%;
     left: 10%;
-    width: 40px;
-    height: 40px;
-    background-image: url(./Images/eva_arrow-back-outline.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
  }
  .back_btn:hover{
    background-image: url(./Images/eva_arrow-back-outline_colour.png);
@@ -190,6 +192,10 @@ button{
   text-align: center;
   margin-bottom: 5%;
   text-decoration: none;
+  transition-duration: 0.2s;
+}
+.popup_button:hover{
+  transform: scale(1.1,1.1);
 }
 .primary{
   background: #1B1F29;
@@ -215,20 +221,17 @@ button{
   margin-bottom: 5%;
  }
  label{
-  position: relative;
   color: rgb(197, 0, 0);
-  font-size: 12px;
+  font-size: 14px;
   font-style: normal;
-  font-weight: 500;
+  text-align:start;
+  font-weight: 400;
+  margin-bottom: 1%;
  }
- .label_name{
-  right: 23%;
- }
- .label_bio{
-  right: 25%;
+ #name-input{
+  margin-bottom: 5%;
  }
  #name-input,#bio-input{
-  margin-top: 5%;
   width: 80%;
   border-radius: 5px;
   text-indent: 10px;
@@ -473,12 +476,19 @@ line-height: normal;
   position: relative;
   justify-content: space-between;
 }
-.nav_left,.nav_right{
+.nav_left{
+  width: 10%;
+  padding-left: 2.5%;
+  justify-content: left;
+}
+.nav_right{
   width: 15%;
+  justify-content: space-around;
+}
+.nav_left,.nav_right{
   display:flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
   position: relative;
 }
 .nav_logo{
@@ -1015,10 +1025,7 @@ justify-items: flex-end;
 .sb{
   width: 40%;
   box-sizing: border-box;
-  transition-duration: 0.2s;
-}
-.sb:hover{
-  transform: scale(1.1,1.1);
+  
 }
 .home_div{
   display: flex;
