@@ -27,7 +27,7 @@
     top: 10%;
     left: 10%;
  }
- .back_btn:hover{
+ .nav_backbtn:hover,.back_btn:hover{
    background-image: url(./Images/eva_arrow-back-outline_colour.png);
  }
  button{
@@ -477,12 +477,12 @@ line-height: normal;
   justify-content: space-between;
 }
 .nav_left{
-  width: 10%;
-  padding-left: 2.5%;
+  width: 30%;
+  padding-left: 1%;
   justify-content: left;
 }
 .nav_right{
-  width: 15%;
+  width: 30%;
   justify-content: space-around;
 }
 .nav_left,.nav_right{
@@ -533,7 +533,7 @@ line-height: normal;
   position: absolute;
   top: 150%;
   right: 50% ;
-  width: 100%;
+  width: 60%;
   z-index: 1000;
   padding: 5px;
   border: 5px solid #1E9B90;
@@ -552,10 +552,10 @@ line-height: normal;
   height: 455px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .drop_box{
-  width: 78%;
+  width: 75%;
   height: 100%;
   border: 2px solid #FFF;
   border-radius: 5px;
@@ -1077,10 +1077,27 @@ margin-top: 2px;
   background-repeat: no-repeat;
   background-size: cover;
 }
+.timeup_img{
+  background-image: url(./Images/timeup.png);
+  width: 80px;
+  height: 80px;
+  margin: 0% auto 5%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .score_popup_heading{
 color: #1B1F29;
 font-size: 45px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
+}
+.score_popup_sub_heading{
+  color: #1B1F29;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 4.5%;
 }

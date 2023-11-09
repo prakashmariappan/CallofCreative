@@ -1,13 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Data from '../../data';
 import Picture from './picture';
 import { useDrop } from 'react-dnd';
 import { useNavigate } from 'react-router-dom';
 import image from '../../Images/Level_1/ref.png';
 import ImageComponent from '../../refimage';
+import Win from '../win';
+import Lose from '../lose';
+import GameOver from '../gameover';
 
 const Level1 = () => {
+    
+    //Image Component value
+    const imageSrc = image;
+    
+    //Win Component value
+    const src = '/Dashboard/Level3';
 
+    //tryagian or play agian function
+    const navigate = useNavigate();
+    const tryagain = () => {
+        window.location.reload();
+      };
+    
+//win or lose or Time Up popup function  
+const [winmodal, setwinModal] = useState(false);
+const [losemodal, setloseModal] = useState(false);
+const [gameovermodal, setgameoverModal] = useState(false);
+
+const toggleWin = () => {
+    setwinModal(!winmodal);
+};
+const toggleLose = () => {
+    setloseModal(!losemodal);
+};
+const toggleGameOver = () => {
+    setgameoverModal(!gameovermodal);
+};
     //eye function
    const [line, setline] = useState(false);
    let showline = line? 'show':'hide';
@@ -17,25 +46,7 @@ const Level1 = () => {
    function hidelinefun(){
        setline((line) => !line);
    } 
-
-    //tryagian or play agian function
-    const navigate = useNavigate();
-    const tryagain = () => {
-        window.location.reload();
-      };
-    
-  //win and lose popup function  
-const [winmodal, setwinModal] = useState(false);
-const [losemodal, setloseModal] = useState(false);
-
-const toggleWin = () => {
-    setwinModal(!winmodal);
-};
-
-const toggleLose = () => {
-    setloseModal(!losemodal);
-};
-    
+   
     //Drop function
     const[box1, setBox1] = useState([]);
     const[box2, setBox2] = useState([]);
@@ -67,7 +78,7 @@ const toggleLose = () => {
     } else {
         evaluation();
     }
-};
+    };
     //evaluation function
     function evaluation(){
     let first= document.getElementById('l1b1').querySelector("img").getAttribute("data-name");
@@ -82,6 +93,30 @@ const toggleLose = () => {
           }
     };
     
+    const [timeLeft, setTimeLeft] = useState(100);
+    // Function to be executed when the timer reaches zero
+     const handleTimeout = () => {
+        if (box1.length === 0 || box2.length === 0 || box3.length === 0) {
+            toggleGameOver();
+        } else {
+            evaluation();
+        }
+    };
+
+    useEffect(() => {
+        if (timeLeft > 0) {
+          const timer = setTimeout(() => {
+            setTimeLeft(timeLeft - 1);
+          }, 1000); // 1000 milliseconds = 1 second
+        
+        // Clear the timer when the component unmounts or when the timer ends
+        return () => clearTimeout(timer);
+        }
+        else {
+            handleTimeout();
+        }
+    }, [timeLeft]);
+  
     return (
         <>
         <div className='navbar'>
@@ -90,7 +125,8 @@ const toggleLose = () => {
         </div>
         <div className='nav_logo'></div>
         <div className='nav_right'>
-        <ImageComponent src={image}/>
+        <p className='time_left'>Time Left: {timeLeft} seconds</p>
+        <ImageComponent src={imageSrc}/>
         <button  onMouseEnter={showlinefun} onMouseLeave={hidelinefun} className='eye_icon navicon'></button>
         </div>      
     </div>
@@ -124,39 +160,13 @@ const toggleLose = () => {
             </div>
         </div>
         {winmodal && (
-            <div className='modal'>
-            <div className='overlay'>
-                <div className='win_con popup_con'>
-                    <div className='score_popup_heading'>You Win!!!</div>
-                    <div className='win_img'></div>
-                    <div className='score_button_con'>
-                    <button className='popup_button sb secondary' onClick={tryagain}>Play Again</button>
-                    <button className='popup_button sb primary' onClick={()=>{navigate('/Dashboard/Level2')}}>Play Next level</button>
-                    </div>
-                    <div className='home_div'>
-                    <button className='go_to_home' onClick={()=>{navigate(-1)}}>Go to Home</button>
-                    <div className='homeimg'></div>
-                    </div>  
-                </div>
-            </div>
-        </div>
+           <Win src={src}/>
         )}
         {losemodal && (
-            <div className='modal'>
-            <div className='overlay'>
-                <div className='more_info_con popup_con'>
-                    <div className='score_popup_heading'>You Lose</div>
-                    <div className='lose_img'></div>
-                    <div className='score_button_con'>
-                    <button className='popup_button sb primary' onClick={tryagain}>Try Again</button>
-                    </div>
-                    <div className='home_div' onClick={()=>{navigate(-1)}}>
-                    <div className='go_to_home'>Go to Home</div>
-                    <div className='homeimg'></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <Lose/>
+        )}
+        {gameovermodal && (
+            <GameOver/>
         )}
         </>
     );
