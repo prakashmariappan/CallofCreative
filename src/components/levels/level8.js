@@ -13,11 +13,10 @@ const Level8 = () => {
     //Image Component value
     const imageSrc = image;
     
-    //tryagian or play agian function
+    //Win Component value
+    const num = '8';
+
     const navigate = useNavigate();
-    const tryagain = () => {
-        window.location.reload();
-      };
     
     //win or lose or Time Up popup function  
 const [winmodal, setwinModal] = useState(false);
@@ -186,7 +185,7 @@ const toggleGameOver = () => {
             </div>
         </div>
         {winmodal && (
-           <Lastwin/>
+           <Lastwin num={num}/>
         )}
         {losemodal && (
             <Lose/>

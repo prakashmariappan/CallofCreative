@@ -16,12 +16,9 @@ const Level1 = () => {
     
     //Win Component value
     const src = '/Dashboard/Level3';
+    const num = '1';
 
-    //tryagian or play agian function
     const navigate = useNavigate();
-    const tryagain = () => {
-        window.location.reload();
-      };
     
 //win or lose or Time Up popup function  
 const [winmodal, setwinModal] = useState(false);
@@ -69,7 +66,6 @@ const toggleGameOver = () => {
     const drop1 = useDropForBox(box1, setBox1);
     const drop2 = useDropForBox(box2, setBox2);
     const drop3 = useDropForBox(box3, setBox3);
-    
 
     //checking the dropbox for image function
     function checkimg() {
@@ -84,7 +80,6 @@ const toggleGameOver = () => {
     let first= document.getElementById('l1b1').querySelector("img").getAttribute("data-name");
     let second= document.getElementById('l1b2').querySelector("img").getAttribute("data-name");
     let third= document.getElementById('l1b3').querySelector("img").getAttribute("data-name");
-        console.log(first,second,third)
         if(first ==='1' && second ==='2' && third ==='3'){  
             toggleWin();
           }
@@ -116,7 +111,7 @@ const toggleGameOver = () => {
             handleTimeout();
         }
     }, [timeLeft]);
-  
+
     return (
         <>
         <div className='navbar'>
@@ -160,7 +155,7 @@ const toggleGameOver = () => {
             </div>
         </div>
         {winmodal && (
-           <Win src={src}/>
+           <Win src={src} num={num}/>
         )}
         {losemodal && (
             <Lose/>

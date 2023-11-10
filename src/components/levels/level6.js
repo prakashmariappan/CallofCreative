@@ -16,12 +16,9 @@ const Level6 = () => {
 
     //Win Component value
     const src = '/Dashboard/Level7';
+    const num = '6';
     
-    //tryagian or play agian function
     const navigate = useNavigate();
-    const tryagain = () => {
-        window.location.reload();
-      };
     
      //win or lose or Time Up popup function  
 const [winmodal, setwinModal] = useState(false);
@@ -182,7 +179,7 @@ const toggleGameOver = () => {
             </div>
         </div>
         {winmodal && (
-           <Win src={src}/>
+           <Win src={src} num={num}/>
         )}
         {losemodal && (
             <Lose/>

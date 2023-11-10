@@ -49,7 +49,7 @@ const Dashboard = () => {
                 <div className='option_name'>Quit Game</div>
             </div>
         </div>
-
+        
         {quitgamemodal && (
             <div className='modal'>
             <div className='overlay'>

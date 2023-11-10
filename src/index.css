@@ -1007,12 +1007,14 @@ justify-items: flex-end;
 .finish_btn:hover{
   transform: scale(1,1.1);
 }
+
 /*Image Styling*/
 .image_styling{
   width: 200px;
   cursor: pointer;
   margin: 5px;
 }
+
 /*Win & Lose Popup Styling*/
 .win_con{
   display: flex;
@@ -1020,18 +1022,18 @@ justify-items: flex-end;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 40%;
+  transition-duration: 2s;
 }
 .sb{
   width: 40%;
   box-sizing: border-box;
-  
 }
 .home_div{
   display: flex;
   flex-direction: row;
-  align-items:flex-end;
-  width: 125px;
+  align-items:center;
+  width: 35%;
+  margin-top: 5%;
   justify-content: space-between;
 }
 .go_to_home{
@@ -1040,17 +1042,52 @@ font-size: 16px;
 font-style: normal;
 font-weight: 550;
 cursor: pointer;
-margin-top: 2px;
+width: 80%;
 }
 .go_to_home:hover{
   text-decoration: underline;
 }
-.homeimg{
-  background-image: url(./Images/home.png);
-  width: 20px;
-  height: 20px;
+.share{
+  width: 30px;
+  height: 25px;
+  background-image: url(./Images/share.png);
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
+}
+.share_con{
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+.sm{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+.download{
+  width: 30px;
+  height: 30px;
+  background-image: url(./Images/Download.png);
+}
+.facebook{
+  width: 30px;
+  height: 30px;
+  background-image: url(./Images/facebook.png);
+}
+.instagram{
+  width: 30px;
+  height: 30px;
+  background-image: url(./Images/insta.png);
+}
+.whatsapp{
+  width: 30px;
+  height: 30px;
+  background-image: url(./Images/whatsapp.png);
 }
 .score_button_con{
   width: 90%;
@@ -1061,8 +1098,8 @@ margin-top: 2px;
 }
 .win_img{
   background-image: url(./Images/Star.png);
-  width: 280px;
-  height: 55px;
+  width: 310px;
+  height: 60px;
   margin: 0% auto 5%;
   background-position: center;
   background-repeat: no-repeat;
