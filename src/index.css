@@ -1055,6 +1055,7 @@ width: 80%;
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+  transition-duration: 0.2s;
 }
 .share_con{
   width: 60%;
@@ -1068,6 +1069,10 @@ width: 80%;
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+  transition-duration: 0.2s;
+}
+.sm:hover,.share:hover{
+  transform: scale(1.1,1.1);
 }
 .download{
   width: 30px;
