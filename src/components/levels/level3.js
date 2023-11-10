@@ -15,7 +15,7 @@ const Level3 = () => {
     const imageSrc = image;
 
     //Win Component value
-    const src = '/Dashboard/Level4';
+    const src = '/Dashboard/Level5';
     const num = '3';
 
     const navigate = useNavigate();
