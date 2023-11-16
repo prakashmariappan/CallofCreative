@@ -8,6 +8,7 @@ import ImageComponent from '../../refimage';
 import Win from '../win';
 import Lose from '../lose';
 import GameOver from '../gameover';
+import Confirmfinish from '../confirmfinish';
 
 const Level1 = () => {
     
@@ -20,20 +21,24 @@ const Level1 = () => {
 
     const navigate = useNavigate();
     
-//win or lose or Time Up popup function  
-const [winmodal, setwinModal] = useState(false);
-const [losemodal, setloseModal] = useState(false);
-const [gameovermodal, setgameoverModal] = useState(false);
+    //win / lose / Time Up / confirm finish popup function  
+    const [winmodal, setwinModal] = useState(false);
+    const [losemodal, setloseModal] = useState(false);
+    const [gameovermodal, setgameoverModal] = useState(false);
+    const [finishmodal, setfinishmodal] = useState(false);
 
-const toggleWin = () => {
+   const toggleWin = () => {
     setwinModal(!winmodal);
-};
-const toggleLose = () => {
+   };
+   const toggleLose = () => {
     setloseModal(!losemodal);
-};
-const toggleGameOver = () => {
+   };
+   const toggleGameOver = () => {
     setgameoverModal(!gameovermodal);
-};
+   };
+   const togglefinish =()=>{
+    setfinishmodal(!finishmodal)
+   }
     //eye function
    const [line, setline] = useState(false);
    let showline = line? 'show':'hide';
@@ -70,7 +75,8 @@ const toggleGameOver = () => {
     //checking the dropbox for image function
     function checkimg() {
     if (box1.length === 0 || box2.length === 0 || box3.length === 0) {
-        alert('Please arrange all the Images and Try Again');
+        togglefinish();
+        toggleLose();
     } else {
         evaluation();
     }
@@ -151,7 +157,7 @@ const toggleGameOver = () => {
             })}
             </div>
             </div> 
-            <button onClick={checkimg} className='finish_btn'>Finish</button>
+            <button onClick={togglefinish} className='finish_btn'>Finish</button>
             </div>
         </div>
         {winmodal && (
@@ -162,6 +168,9 @@ const toggleGameOver = () => {
         )}
         {gameovermodal && (
             <GameOver/>
+        )}
+        {finishmodal && (
+           <Confirmfinish checkimg={checkimg} toggle={togglefinish}/>
         )}
         </>
     );

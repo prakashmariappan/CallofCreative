@@ -1119,6 +1119,10 @@ width: 80%;
   background-repeat: no-repeat;
   background-size: cover;
 }
+.losehome{
+  text-align: center;
+  margin: 0% auto;
+}
 .timeup_img{
   background-image: url(./Images/timeup.png);
   width: 80px;

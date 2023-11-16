@@ -8,6 +8,7 @@ import image from '../../Images/Level_7/ref.png';
 import Win from '../win';
 import Lose from '../lose';
 import GameOver from '../gameover';
+import Confirmfinish from '../confirmfinish';
 
 const Level7 = () => {
 
@@ -34,6 +35,10 @@ const toggleLose = () => {
 const toggleGameOver = () => {
     setgameoverModal(!gameovermodal);
 };
+const [finishmodal, setfinishmodal] = useState(false);
+const togglefinish =()=>{
+    setfinishmodal(!finishmodal)
+   }
 
  //eye function 
  const [line, setline] = useState(false);
@@ -76,7 +81,8 @@ const drop5 = useDropForBox(box5, setBox5);
 //checking the dropbox for image function
 function checkimg() {
 if (box1.length === 0 || box2.length === 0 || box3.length === 0 || box4.length === 0 || box5.length === 0)  {
-    alert('Please arrange all the Images and Try Again');
+    togglefinish();
+    toggleLose();
 } else {
     evaluation();
 }
@@ -174,7 +180,7 @@ if (box1.length === 0 || box2.length === 0 || box3.length === 0 || box4.length =
             </div>
             </div> 
             
-            <button onClick={checkimg} className='finish_btn'>Finish</button>
+            <button onClick={togglefinish} className='finish_btn'>Finish</button>
             </div>
         </div>
         {winmodal && (
@@ -185,6 +191,9 @@ if (box1.length === 0 || box2.length === 0 || box3.length === 0 || box4.length =
         )}
         {gameovermodal && (
             <GameOver/>
+        )}
+        {finishmodal && (
+           <Confirmfinish checkimg={checkimg} toggle={togglefinish}/>
         )}
         </>
     );

@@ -22,7 +22,7 @@ const Gameover = () => {
                     <button className='popup_button sb primary' onClick={tryagain}>Try Again</button>
                     </div>
                     <div className='home_div' onClick={()=>{navigate(-1)}}>
-                    <div className='go_to_home'>Go to Home</div>
+                    <div className='go_to_home losehome'>Go to Home</div>
                     <div className='homeimg'></div>
                     </div>
                 </div>
