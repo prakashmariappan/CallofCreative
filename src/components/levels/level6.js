@@ -78,8 +78,8 @@ const togglefinish =()=>{
      
          //checking the dropbox for image function
          function checkimg() {
+            togglefinish();
          if (box1.length === 0 || box2.length === 0 || box3.length === 0 || box4.length === 0 || box5.length === 0)  {
-             togglefinish();
              toggleLose();
          } else {
              evaluation();
