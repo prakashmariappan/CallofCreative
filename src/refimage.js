@@ -15,7 +15,7 @@ const ImageComponent = (props) => {
       {showImage && (
         <div className='refimge_con'>
           {/*<div className='ref_text'>Arrange images based on this order</div>*/}
-          <img className='ref_img' src={props.src} alt="Image" />
+          <img className='ref_img' src={props.src} alt="ref"/>
         </div>
       )}
     </div>
