@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Data from '../../data';
 import Picture from './picture';
 import { useDrop } from 'react-dnd';
-import { useNavigate } from 'react-router-dom';
 import image from '../../Images/Level_1/ref.png';
 import ImageComponent from '../../refimage';
 import Win from '../win';
 import Lose from '../lose';
 import GameOver from '../gameover';
 import Confirmfinish from '../confirmfinish';
-
+import Backcomp from '../backcomp';
 const Level1 = () => {
     
     //Image Component value
@@ -19,16 +18,23 @@ const Level1 = () => {
     const src = '/Dashboard/Level3';
     const num = '1';
 
-    const navigate = useNavigate();
+   
     
     //win / lose / Time Up / confirm finish popup function  
     const [winmodal, setwinModal] = useState(false);
+    const [showStars, setShowStars] = useState(false);
     const [losemodal, setloseModal] = useState(false);
     const [gameovermodal, setgameoverModal] = useState(false);
     const [finishmodal, setfinishmodal] = useState(false);
 
    const toggleWin = () => {
     setwinModal(!winmodal);
+    setShowStars(true);
+      // After a delay, reset the animation state
+      setTimeout(() => {
+        setShowStars(false);
+      }, 2000);
+      {showStars && <div className="stars" />}
    };
    const toggleLose = () => {
     setloseModal(!losemodal);
@@ -122,7 +128,7 @@ const Level1 = () => {
         <>
         <div className='navbar'>
         <div className='nav_left'>
-        <button className='nav_backbtn' onClick={() => navigate(-1)}></button>
+        <Backcomp/>
         </div>
         <div className='nav_logo'></div>
         <div className='nav_right'>

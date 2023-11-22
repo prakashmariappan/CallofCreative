@@ -11,35 +11,58 @@
   line-height: normal;
   font-weight: normal;
 }
+
  body.active.modal{
   overflow-y: hidden;
  }
- .nav_backbtn,.back_btn{
-  width: 40px;
-  height: 40px;
+ 
+ .nav_backbtn{
+  width: 30px;
+  height: 30px;
   background-image: url(./Images/eva_arrow-back-outline.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
  }
- .back_btn{
-    position: absolute;
-    top: 10%;
-    left: 10%;
+
+ .pagebackarrow_con:hover,.backarrow_con:hover{
+  .nav_backbtn{
+    background-image: url(./Images/eva_arrow-back-outline_colour.png);
+  }
+  .backtext{
+    color: #1E9B90;
+    cursor: pointer;
+  }
  }
- .nav_backbtn:hover,.back_btn:hover{
-   background-image: url(./Images/eva_arrow-back-outline_colour.png);
- }
+ 
  button{
   background: none;
  }
- .page_heading{
+ 
+ .page_topcon{
+  display: flex;
+  flex-direction: row;
   margin: 4% auto;
+  width: 80%;
+ }
+ .page_heading{
+  width: 100%;
   color: #FFF;
   font-size: 40px;
   font-style: normal;
   font-weight: 500;
   text-align: center;
+ }
+ .pagebackarrow_con{
+  display: flex;
+  flex-direction: row;
+  width: 10%;
+  align-items: center;
+  cursor: pointer;
+  position: fixed;
+  top: 12%;
+  left: 10%;
  }
 ::-webkit-scrollbar{
   width: 8px;
@@ -59,6 +82,7 @@
   width: 100%;
   position: absolute;
  }
+
 .linearbox1,.linearbox2{
   position: fixed;
   width: 40%;
@@ -68,6 +92,7 @@
   filter: blur(150px);
   animation: glow 5s infinite alternate;
 }
+
 @keyframes glow {
   from {
     box-shadow: 0px 0px 10px -5px rgba(6, 125, 113, 0.60);
@@ -76,10 +101,12 @@
     box-shadow: 0px 0px 10px 5px rgba(6, 125, 113, 0.60);
   }
 }
+
 .linearbox1{
   top: -10%;
   left: -25%;
 }
+
 .linearbox2{
   bottom: -30%;
   left: 80%;
@@ -224,9 +251,17 @@ button{
   color: rgb(197, 0, 0);
   font-size: 14px;
   font-style: normal;
-  text-align:start;
+  width: 100%;
+  text-align: left;
   font-weight: 400;
   margin-bottom: 1%;
+  margin-left: 19%;
+ }
+ .empty-input{
+  border: 2px solid rgb(197, 0, 0);
+ }
+ .default{
+  border: 2px solid #1E9B90;
  }
  #name-input{
   margin-bottom: 5%;
@@ -241,7 +276,6 @@ button{
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  border: hidden;
   outline: none;
 }
 .ep_btn{
@@ -306,7 +340,7 @@ border: 2px solid #1B1F29;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-right:5px;
+  margin-right:10px;
 }
 .prfoile_name{
   color: #FFF;
@@ -478,7 +512,7 @@ line-height: normal;
 }
 .nav_left{
   width: 30%;
-  padding-left: 1%;
+  padding-left: 2%;
   justify-content: left;
 }
 .nav_right{
@@ -490,6 +524,18 @@ line-height: normal;
   flex-direction: row;
   align-items: center;
   position: relative;
+}
+.backarrow_con{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.backtext{
+  font-size: 18px;
+  padding-left: 15%;
+}
+.pagebt{
+  padding-left: 5%;
 }
 .nav_logo{
   width: 160px;
@@ -533,7 +579,7 @@ line-height: normal;
   position: absolute;
   top: 150%;
   right: 45% ;
-  width: 60%;
+  width: 70%;
   z-index: 1000;
   padding: 5px;
   border: 5px solid #1E9B90;
@@ -545,6 +591,12 @@ line-height: normal;
   background-size: cover;
   background-repeat: no-repeat;
 }
+/*.ref_text{
+  color: #1D1E22;
+  text-align: center;
+  font-size: 14px;
+  border-bottom: 2px solid #3DBDA7;
+}*/
 /*Level Page Styling*/
 .box_con{
   width: 98%;
@@ -1016,6 +1068,35 @@ justify-items: flex-end;
 }
 
 /*Win & Lose Popup Styling*/
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.confetti{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: rotate(90deg);
+  transform-origin: 50% 50%;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translate(0, 0) rotate(45deg);
+  }
+  100% {
+    transform: translate(200vw, 100vh) rotate(45deg);
+  }
+}
+
 .win_con{
   display: flex;
   align-items: center;
@@ -1146,4 +1227,26 @@ line-height: normal;
   font-weight: 700;
   line-height: normal;
   margin-bottom: 4.5%;
+}
+/*Star Animation*/
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background: url('./Images/Star.png') repeat 0 0;
+  animation: starsAnimation 2s ease-out;
+  z-index: 9999;
+}
+
+@keyframes starsAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
 }

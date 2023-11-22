@@ -9,8 +9,13 @@ const Profile = () => {
 
     return (
         <>
-            <button className='back_btn' onClick={() => navigate(-1)}></button>
+            <div className='page_topcon'>
+            <div className='pagebackarrow_con' onClick={() => navigate(-1)}>
+            <button className='nav_backbtn' ></button>
+                <div className='pagebt backtext'>Back</div>
+            </div>
             <div className='page_heading'>Profile</div>
+            </div>
             <div className='profilepage_img'></div>
             <div className='profilepage_name'>{name}</div>
             <div className='profilepage_bio'>{bio}</div>

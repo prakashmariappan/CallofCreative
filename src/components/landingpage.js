@@ -17,17 +17,22 @@ const Landingpage = () => {
         const [bio,setBio]= useState('');
         const [errorName, setErrorName] = useState('');
         const [errorBio, setErrorBio] = useState('');
+        const [isEmptyname, setIsEmptyname] = useState(false);
+        const [isEmptybio, setIsEmptybio] = useState(false);
         const handleButtonClick = () => {
           if (name.trim() === ''){
-            setErrorName('Please enter your name');
+            setErrorName('Name is Required');
+            setIsEmptyname(!isEmptyname);
           }
           if (bio.trim() === ''){
-            setErrorBio('Please enter your Bio');
+            setErrorBio('Bio is Required');
+            setIsEmptybio(!isEmptybio);
           } 
           else{
             navigate('/Dashboard',{state:{name, bio}}); 
           }
         };
+        
           
 
     return (
@@ -46,14 +51,16 @@ const Landingpage = () => {
                 <div className='enter_player_con popup_con'>
                     <div className='popup_heading ep'>Enter your Details</div>
                     <label className='label_name'>{errorName}</label>
-                    <input id='name-input' type='text' placeholder='Enter Your Name' autoComplete="off" value={name} onChange={(e) => {
+                    <input id='name-input' type='text' className={isEmptyname ? 'empty-input' : 'default'} placeholder='Enter Your Name' autoComplete="off" value={name} onChange={(e) => {
           setName(e.target.value);
           setErrorName(''); // Clear error message when the user types
+          setIsEmptyname(false);
         }}/>
                     <label className='label_bio'>{errorBio}</label>
-                    <input id='bio-input' type='text' placeholder='Enter Your Bio' autoComplete="off" value={bio} onChange={(e) => {
+                    <input id='bio-input' type='text' className={isEmptybio ? 'empty-input' : ' default'} placeholder='Enter Your Bio' autoComplete="off" value={bio} onChange={(e) => {
           setBio(e.target.value);
           setErrorBio(''); // Clear error message when the user types
+          setIsEmptybio(false);
         }}/>
         
                     <div className='popup_button_con ep_btn'>

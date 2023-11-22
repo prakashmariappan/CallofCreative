@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Data from '../../data';
 import Picture from './picture';
 import { useDrop } from 'react-dnd';
-import { useNavigate } from 'react-router-dom';
 import ImageComponent from '../../refimage';
 import image from '../../Images/Level_5/ref.png';
 import Win from '../win';
 import Lose from '../lose';
 import GameOver from '../gameover';
 import Confirmfinish from '../confirmfinish';
+import Backcomp from '../backcomp';
 
 const Level5 = () => {
 
@@ -18,8 +18,6 @@ const Level5 = () => {
     //Win Component value
     const src = '/Dashboard/Level6';
     const num = '5';
-    
-    const navigate = useNavigate();
     
     //win or lose or Time Up popup function  
 const [winmodal, setwinModal] = useState(false);
@@ -137,7 +135,7 @@ const togglefinish =()=>{
         <>
        <div className='navbar'>
             <div className='nav_left'>
-            <button className='nav_backbtn' onClick={() => navigate(-1)}></button>
+            <Backcomp/>
             </div>
             <div className='nav_logo'></div>
             <div className='nav_right'>
