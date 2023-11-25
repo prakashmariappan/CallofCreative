@@ -44,7 +44,7 @@ const Landingpage = () => {
                 <button className='lan_button' onClick={toggleMoreInfo}>More Info</button>
             </div>
         </div>
-        <div className='footer_name'><h1 className='footer_title'>Created by NetWeavers</h1></div>
+        <div className='footer_name'><h1 className='footer_title'>Created by Team NetWeavers</h1></div>
         {enterplayermodal && (
             <div className='modal'>
             <div className='overlay'>
@@ -78,7 +78,7 @@ const Landingpage = () => {
                 <div className='more_info_con popup_con'>
                     <div className='popup_heading'>More Info</div>
                     <div className='moreinfo_content_con'>
-                    Call of Creative is developed by the 'Team NetWeavers' for students and developers who can learn UI/UX design by playing this game. While encouraging strategy, skill development, and a sense of accomplishment, the game is made to provide enjoyment, excitement, and much knowledge about UI/UX Design.
+                    Heuristic Puzzle Forge is developed by the 'Team NetWeavers' for students and developers who can learn UI/UX design by playing this game. While encouraging strategy, skill development, and a sense of accomplishment, the game is made to provide enjoyment, excitement, and much knowledge about UI/UX Design.
                     </div>
                     <button className='close_btn' onClick={toggleMoreInfo}></button>
                 </div>

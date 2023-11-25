@@ -1,19 +1,21 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const SelectLevelPage = () => {
-  const navigate = useNavigate();
+    const location = useLocation();
+    const navigate = useNavigate();
+    const name = location.state.name;
 
   const handleLevelClick = (level) => {
-    navigate(`/Dashboard/Level${level}`);
+    navigate(`/Dashboard/Level${level}`,{state:{name}});
   };
 
   const handleMouseEnter = (difficulty) => {
-    document.getElementById('level').innerHTML = `Difficulty Level: ${difficulty}`;
+    document.getElementById('level').innerHTML = `Difficulty Level : ${difficulty}`;
   };
 
   const handleMouseLeave = () => {
-    document.getElementById('level').innerHTML = 'Difficulty Level:';
+    document.getElementById('level').innerHTML = 'Difficulty Level : Select any level to view';
   };
 
   const generateLevelButtons = () => {
@@ -24,15 +26,16 @@ const SelectLevelPage = () => {
         key={level}
         className='level_arrange'
         onClick={() => handleLevelClick(level)}
-        onMouseEnter={() => handleMouseEnter(getDifficulty(level))}
-        onMouseLeave={handleMouseLeave}
       >
+        <div className='lev_con' onMouseEnter={() => handleMouseEnter(getDifficulty(level))}
+        onMouseLeave={handleMouseLeave}>
         <div className='levels'>
           <div className='level_no' id={level.toString()}>
             {level}
           </div>
         </div>
         <div className='level_number'>Level {level}</div>
+      </div>
       </div>
     ));
   };
@@ -57,7 +60,7 @@ const SelectLevelPage = () => {
         <div className='page_heading'>Select Level</div>
       </div>
       <div className='level_type' id='level'>
-        Difficulty Level:
+        Difficulty Level : Select any level to view
       </div>
       <div className='select_level_con'>{generateLevelButtons()}</div>
     </>

@@ -15,6 +15,7 @@ import Level5 from './components/levels/level5';
 import Level6 from './components/levels/level6';
 import Level7 from './components/levels/level7';
 import Level8 from './components/levels/level8';
+import ContentBox from './components/levels/level1message';
 
 const Link = () => {
     return (
@@ -28,7 +29,7 @@ const Link = () => {
         <Route path='/Dashboard/HowtoPlay' element={<Howtoplay/>} exact/>
         <Route path='/Dashboard/About' element={<About/>} exact/>
         <Route path='/Dashboard/Profile' element={<Profile/>} exact/>
-        <Route path='/Dashboard/Level1' element={<Level1/>} exact/>
+        <Route path='/Dashboard/Level1' element={<ContentBox/>} exact/>
         <Route path='/Dashboard/Level2' element={<Level4/>} exact/>
         <Route path='/Dashboard/Level3' element={<Level2/>} exact/>
         <Route path='/Dashboard/Level4' element={<Level3/>} exact/>
@@ -36,6 +37,7 @@ const Link = () => {
         <Route path='/Dashboard/Level6' element={<Level6/>} exact/>
         <Route path='/Dashboard/Level7' element={<Level7/>} exact/>
         <Route path='/Dashboard/Level8' element={<Level8/>} exact/>
+        <Route path='/Dashboard/Level1/Window' element={<Level1/>} exact/>
         </Routes>
         </BrowserRouter>    
         </>

@@ -121,7 +121,7 @@
    width: 50%;
 }
 .logo_con{
-   width: 440px;
+   width: 530px;
    height: 200px;
    background-image: url(./Images/Logo.png);
    background-position: center;
@@ -426,9 +426,10 @@ border: 2px solid #1B1F29;
 
 /* Select Level Page Styling*/
 .level_type{
-  text-align: right;
+  text-align: center;
   width: 50%;
   margin: auto;
+  font-size: 20px;
 }
 .select_level_con{
   display: grid;
@@ -446,6 +447,13 @@ border: 2px solid #1B1F29;
   cursor: pointer;
   transition-duration: 0.2s;
   margin-bottom: 5%;
+}
+.lev_con{
+  margin: 25% auto 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .levels{
   width: 60px;
@@ -559,7 +567,7 @@ line-height: normal;
   padding-left: 5%;
 }
 .nav_logo{
-  width: 160px;
+  width: 190px;
   height: 70px;
   background-image: url(./Images/Logo.png);
   background-position: center;
@@ -618,6 +626,11 @@ line-height: normal;
   font-size: 14px;
   border-bottom: 2px solid #3DBDA7;
 }*/
+
+.content-box{
+width: 60%;
+margin: 0% auto;
+}
 /*Level Page Styling*/
 .box_con{
   width: 98%;

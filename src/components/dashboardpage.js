@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+
 const Dashboard = () => {
     const location = useLocation();
     const navigate = useNavigate();
@@ -24,7 +25,7 @@ const Dashboard = () => {
                 </div>
                 <div className='option_name'>Start Game</div>
             </div>
-            <div className='options' onClick={()=>navigate('/Dashboard/SelectLevel')}>
+            <div className='options' onClick={()=>{navigate('/Dashboard/SelectLevel',{state:{name}})}}>
             <div className='option_bg'>
                 <div className='option_icon icon2'></div>
                 </div>
