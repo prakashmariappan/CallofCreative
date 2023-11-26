@@ -1,7 +1,11 @@
-Our project aims to develop a gaming website (Call of Creative) for students and developers who can learn UI/UX design by playing this game. While encouraging strategy, skill development, and a sense of accomplishment, the game is made to provide enjoyment, excitement, and much knowledge about UI/UX Design.
+Our project aims to develop a gaming website (Heuristic Puzzle Forge) for students and developers who can learn UI/UX design by playing this game. While encouraging strategy, skill development, and a sense of accomplishment, the game is made to provide enjoyment, excitement, and much knowledge about UI/UX Design.
 
+<<<<<<< HEAD
 Access the site by https://callofcreative.netlify.app/
 
+=======
+Access the site by https://heuristicpuzzleforge.netlify.app/
+>>>>>>> 2b57c082851b63c0a616fc81f9d77d0361db3c1c
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
