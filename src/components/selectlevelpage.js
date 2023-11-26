@@ -1,21 +1,23 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SelectLevelPage = () => {
-    const location = useLocation();
-    const navigate = useNavigate();
-    const name = location.state.name;
+  const location = useLocation();
+  const navigate = useNavigate();
+  const name = location.state.name;
 
   const handleLevelClick = (level) => {
-    navigate(`/Dashboard/Level${level}`,{state:{name}});
+    navigate(`/Dashboard/Level${level}`, { state: { name } });
   };
 
   const handleMouseEnter = (difficulty) => {
-    document.getElementById('level').innerHTML = `Difficulty Level : ${difficulty}`;
+    document.getElementById("level").innerHTML =
+      `Difficulty Level : ${difficulty}`;
   };
 
   const handleMouseLeave = () => {
-    document.getElementById('level').innerHTML = 'Difficulty Level : Select any level to view';
+    document.getElementById("level").innerHTML =
+      "Difficulty Level : Select any level to view";
   };
 
   const generateLevelButtons = () => {
@@ -24,45 +26,48 @@ const SelectLevelPage = () => {
     return levels.map((level) => (
       <div
         key={level}
-        className='level_arrange'
+        className="level_arrange"
         onClick={() => handleLevelClick(level)}
       >
-        <div className='lev_con' onMouseEnter={() => handleMouseEnter(getDifficulty(level))}
-        onMouseLeave={handleMouseLeave}>
-        <div className='levels'>
-          <div className='level_no' id={level.toString()}>
-            {level}
+        <div
+          className="lev_con"
+          onMouseEnter={() => handleMouseEnter(getDifficulty(level))}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="levels">
+            <div className="level_no" id={level.toString()}>
+              {level}
+            </div>
           </div>
+          <div className="level_number">Level {level}</div>
         </div>
-        <div className='level_number'>Level {level}</div>
-      </div>
       </div>
     ));
   };
 
   const getDifficulty = (level) => {
     if (level <= 3) {
-      return 'Easy';
+      return "Easy";
     } else if (level <= 6) {
-      return 'Medium';
+      return "Medium";
     } else {
-      return 'Hard';
+      return "Hard";
     }
   };
 
   return (
     <>
-      <div className='page_topcon'>
-        <div className='pagebackarrow_con' onClick={() => navigate(-1)}>
-          <button className='nav_backbtn'></button>
-          <div className='pagebt backtext'>Back</div>
+      <div className="page_topcon">
+        <div className="pagebackarrow_con" onClick={() => navigate(-1)}>
+          <button className="nav_backbtn"></button>
+          <div className="pagebt backtext">Back</div>
         </div>
-        <div className='page_heading'>Select Level</div>
+        <div className="page_heading">Select Level</div>
       </div>
-      <div className='level_type' id='level'>
+      <div className="level_type" id="level">
         Difficulty Level : Select any level to view
       </div>
-      <div className='select_level_con'>{generateLevelButtons()}</div>
+      <div className="select_level_con">{generateLevelButtons()}</div>
     </>
   );
 };

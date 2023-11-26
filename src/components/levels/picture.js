@@ -1,9 +1,9 @@
-import React from 'react';
-import { useDrag } from 'react-dnd';
+import React from "react";
+import { useDrag } from "react-dnd";
 
 const Picture = ({ id, image, name }) => {
   const [{ isDragging }, drag] = useDrag({
-    type: 'image',
+    type: "image",
     item: { key: id },
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
@@ -11,16 +11,16 @@ const Picture = ({ id, image, name }) => {
   });
 
   const imageStyle = {
-    border: isDragging ? '2px solid #a9a9a9' : '0px',
+    border: isDragging ? "2px solid #a9a9a9" : "0px",
   };
 
   return (
     <img
       ref={drag}
-      alt='Drag Component'
+      alt="Drag Component"
       src={image}
       data-name={name}
-      className='image_styling'
+      className="image_styling"
       style={imageStyle}
     />
   );
