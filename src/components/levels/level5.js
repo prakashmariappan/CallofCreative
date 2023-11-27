@@ -127,7 +127,8 @@ const Level5 = () => {
       .getElementById("l5b7")
       .querySelector("img")
       .getAttribute("data-name");
-
+      
+    console.log(first,second,third,four,five,six,seven);
     if (
       first === "1" &&
       second === "2" &&
@@ -192,89 +193,89 @@ const Level5 = () => {
       </div>
       <div className="box_con">
         <div className="drop_box">
-          <div className={showline} name="box" id="l5b1" ref={drop1}>
+          <div className={showline} data-name="box" id="l5b1" ref={drop1}>
             {box1.map((picture) => {
               return (
                 <Picture
                   id={picture.id}
                   key={picture.id}
-                  data-name={picture.name}
+                  name={picture.name}
                   image={picture.image}
                 />
               );
             })}
           </div>
           <div className="level5_row">
-            <div className={showline} name="box" id="l5b2" ref={drop2}>
+            <div className={showline} data-name="box" id="l5b2" ref={drop2}>
               {box2.map((picture) => {
                 return (
                   <Picture
                     id={picture.id}
                     key={picture.id}
-                    data-name={picture.name}
+                    name={picture.name}
                     image={picture.image}
                   />
                 );
               })}
             </div>
-            <div className={showline} name="box" id="l5b3" ref={drop3}>
+            <div className={showline} data-name="box" id="l5b3" ref={drop3}>
               {box3.map((picture) => {
                 return (
                   <Picture
                     id={picture.id}
                     key={picture.id}
-                    data-name={picture.name}
+                    name={picture.name}
                     image={picture.image}
                   />
                 );
               })}
             </div>
             <div className="level5_para">
-              <div className={showline} name="box" id="l5b4" ref={drop4}>
+              <div className={showline} data-name="box" id="l5b4" ref={drop4}>
                 {box4.map((picture) => {
                   return (
                     <Picture
                       id={picture.id}
                       key={picture.id}
-                      data-name={picture.name}
+                      name={picture.name}
                       image={picture.image}
                     />
                   );
                 })}
               </div>
-              <div className={showline} name="box" id="l5b5" ref={drop5}>
+              <div className={showline} data-name="box" id="l5b5" ref={drop5}>
                 {box5.map((picture) => {
                   return (
                     <Picture
                       id={picture.id}
                       key={picture.id}
-                      data-name={picture.name}
+                      name={picture.name}
                       image={picture.image}
                     />
                   );
                 })}
               </div>
             </div>
-            <div className={showline} name="box" id="l5b6" ref={drop6}>
+            <div className={showline} data-name="box" id="l5b6" ref={drop6}>
               {box6.map((picture) => {
                 return (
                   <Picture
                     id={picture.id}
                     key={picture.id}
-                    data-name={picture.name}
+                    name={picture.name}
                     image={picture.image}
                   />
                 );
               })}
             </div>
           </div>
-          <div className={showline} name="box" id="l5b7" ref={drop7}>
+          <div className={showline} data-name="box" id="l5b7" ref={drop7}>
             {box7.map((picture) => {
               return (
                 <Picture
                   id={picture.id}
                   key={picture.id}
-                  data-name={picture.name}
+                  name={picture.name}
                   image={picture.image}
                 />
               );
@@ -289,7 +290,7 @@ const Level5 = () => {
                   <Picture
                     id={picture.id}
                     key={picture.id}
-                    data-name={picture.name}
+                    name={picture.name}
                     image={picture.image}
                   />
                 );

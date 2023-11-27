@@ -2,8 +2,8 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const SelectLevelPage = () => {
-  const location = useLocation();
   const navigate = useNavigate();
+  const location = useLocation();
   const name = location.state.name;
 
   const handleLevelClick = (level) => {

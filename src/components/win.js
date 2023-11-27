@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { saveAs } from "file-saver";
 import html2canvas from "html2canvas";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Confetti from "./confetti";
 
 const Win = (props) => {

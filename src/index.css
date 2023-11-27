@@ -646,14 +646,20 @@ label {
 }
 .content-box p {
   font-size: 16px;
-  height: 100px;
   font-style: normal;
   font-weight: 250;
 }
-
+.message-button-con{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50%;
+  align-items: center;
+  margin:5% auto 0% auto;
+}
 .message_button{
-  margin-left: 75%;
-  width: 25%;
+  padding: 3% 0%;
+  width: 40%;
   font-size: 18px;
 }
 /*Level Page Styling*/

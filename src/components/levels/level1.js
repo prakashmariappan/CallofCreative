@@ -14,7 +14,7 @@ const Level1 = () => {
   const imageSrc = image;
 
   //Win Component value
-  const src = "/Dashboard/Level3";
+  const src = "/Dashboard/Level2";
   const num = "1";
 
   //win / lose / Time Up / confirm finish popup function
