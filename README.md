@@ -1,7 +1,7 @@
 Our project aims to develop a gaming website (Heuristic Puzzle Forge) for students and developers who can learn UI/UX design by playing this game. While encouraging strategy, skill development, and a sense of accomplishment, the game is made to provide enjoyment, excitement, and much knowledge about UI/UX Design.
 
 <<<<<<< HEAD
-Access the site by https://callofcreative.netlify.app/
+Access the site by https://heuristicpuzzleforge.netlify.app/
 
 =======
 Access the site by https://heuristicpuzzleforge.netlify.app/
