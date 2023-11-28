@@ -173,8 +173,9 @@ const Level7 = () => {
         </div>
       </div>
       <div className="box_con">
-        <div className="drop_box l7con">
+        <div className="drop_box">
         <div className="box_name">Drop Images here</div>
+        <div className="l7con">
           <div className="level7_row">
             <div className={showline} name="box" id="l7b1" ref={drop1}>
               {box1.map((picture) => {
@@ -235,6 +236,7 @@ const Level7 = () => {
                 />
               );
             })}
+          </div>
           </div>
         </div>
         <div className="right_con">

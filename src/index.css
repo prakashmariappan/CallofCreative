@@ -994,6 +994,7 @@ label {
 .l7con {
   display: flex;
   flex-direction: row;
+  height: 100%;
 }
 .level7_row,
 #l7b5 {
@@ -1046,7 +1047,7 @@ label {
   align-items: flex-end;
 }
 #l7b5 img {
-  width: 400px;
+  width: 390px;
 }
 /*Level 8 styling*/
 .l8_row {
@@ -1175,7 +1176,7 @@ label {
 .image_styling {
   width: 200px;
   cursor: pointer;
-  margin: 5px;
+  margin:5px;
 }
 
 /*Win & Lose Popup Styling*/
