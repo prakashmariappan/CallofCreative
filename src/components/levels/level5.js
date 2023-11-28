@@ -193,6 +193,7 @@ const Level5 = () => {
       </div>
       <div className="box_con">
         <div className="drop_box">
+        <div className="box_name">Drop Images here</div>
           <div className={showline} data-name="box" id="l5b1" ref={drop1}>
             {box1.map((picture) => {
               return (

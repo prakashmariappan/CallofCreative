@@ -160,6 +160,7 @@ const Level2 = () => {
       </div>
       <div className="box_con">
         <div className="drop_box">
+        <div className="box_name">Drop Images here</div>
           <div className={showline} name="box" id="l2b1" ref={drop1}>
             {box1.map((picture) => {
               return (
@@ -211,6 +212,7 @@ const Level2 = () => {
         </div>
         <div className="right_con">
           <div className="drag_box">
+            <div className="box_name">Drag Images from here</div>
             <div className="drag_con">
               {Data.level2.map((picture) => {
                 return (

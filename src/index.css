@@ -579,7 +579,7 @@ label {
   background-image: url(./Images/Logo.png);
   background-position: center;
   background-size: cover;
-  margin: 2% auto;
+  margin: 1% auto;
 }
 .eye_icon {
   width: 25px;
@@ -665,8 +665,8 @@ label {
 /*Level Page Styling*/
 .box_con {
   width: 98%;
-  margin: 1% auto;
-  height: 455px;
+  margin: 2% auto;
+  height: 460px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -674,7 +674,6 @@ label {
 .drop_box {
   width: 75%;
   height: 100%;
-  border: 2px solid #fff;
   border-radius: 5px;
   background-color: #d9d9d9;
   display: flex;
@@ -1120,15 +1119,27 @@ label {
 }
 .drag_box {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   background-color: #d9d9d9;
   border-radius: 5px;
   width: 100%;
 }
+.box_name{
+  text-align: center;
+  color: #1d1e22;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #3dbda7;
+  padding: 3px 0%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px ;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
 .drag_con {
   width: 100%;
-  height: 380px;
+  height: 365px;
   overflow: hidden;
   overflow-y: scroll;
   display: grid;

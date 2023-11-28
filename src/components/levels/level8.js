@@ -182,6 +182,7 @@ const Level8 = () => {
       </div>
       <div className="box_con">
         <div className="drop_box">
+        <div className="box_name">Drop Images here</div>
           <div className="l8_row">
             <div className={showline} name="box" id="l4b1" ref={drop1}>
               {box1.map((picture) => {
@@ -261,6 +262,7 @@ const Level8 = () => {
         </div>
         <div className="right_con">
           <div className="drag_box">
+            <div className="box_name">Drag Images from here</div>
             <div className="drag_con">
               {Data.level8.map((picture) => {
                 return (
