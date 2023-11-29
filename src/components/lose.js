@@ -23,7 +23,7 @@ const Lose = () => {
             <div
               className="home_div"
               onClick={() => {
-                navigate(-1);
+                navigate(-2);
               }}
             >
               <div className="go_to_home losehome">Go to Home</div>

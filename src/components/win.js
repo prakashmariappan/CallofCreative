@@ -70,7 +70,7 @@ const Win = (props) => {
               <div
                 className="go_to_home"
                 onClick={() => {
-                  navigate(-1);
+                  navigate(-2);
                 }}
               >
                 Go to Home

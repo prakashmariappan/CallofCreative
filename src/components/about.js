@@ -14,7 +14,7 @@ const About = () => {
       <div className="content">
         Heuristic Puzzle Forge is developed by the 'Team NetWeavers' for
         students and developers who can learn UI/UX design by playing this game.
-        Call of Creative is a thriving online gaming community where gamers of
+        Heuristic Puzzle Forge is a thriving online gaming community where gamers of
         all backgrounds can come to celebrate their shared love for gaming.
         While encouraging strategy, skill development, and a sense of
         accomplishment, the game is made to provide enjoyment, excitement, and
