@@ -13,12 +13,12 @@ const About = () => {
       </div>
       <div className="content">
         Heuristic Puzzle Forge is developed by the 'Team NetWeavers' for
-        students and developers who can learn UI/UX design by playing this game.
+        students and developers who can learn Nielsen's Heuristics Law by playing this game.
         Heuristic Puzzle Forge is a thriving online gaming community where gamers of
         all backgrounds can come to celebrate their shared love for gaming.
         While encouraging strategy, skill development, and a sense of
         accomplishment, the game is made to provide enjoyment, excitement, and
-        much knowledge about UI/UX Design.
+        much knowledge about Nielsen's Heuristics Law.
       </div>
       <div className="footer_name">
         <h1 className="footer_title">Created by Team NetWeavers</h1>
