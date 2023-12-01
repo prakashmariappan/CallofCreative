@@ -250,13 +250,14 @@ const Level6 = () => {
                     key={picture.id}
                     name={picture.name}
                     image={picture.image}
+                    title={picture.title}
                   />
                 );
               })}
             </div>
           </div>
 
-          <button onClick={togglefinish} className="finish_btn">
+          <button onClick={togglefinish} className="finish_btn" title="Finish">
             Finish
           </button>
         </div>

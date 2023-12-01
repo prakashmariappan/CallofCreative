@@ -1,7 +1,7 @@
 import React from "react";
 import { useDrag } from "react-dnd";
 
-const Picture = ({ id, image, name }) => {
+const Picture = ({ id, image, name, title }) => {
   const [{ isDragging }, drag] = useDrag({
     type: "image",
     item: { key: id },
@@ -22,6 +22,7 @@ const Picture = ({ id, image, name }) => {
       data-name={name}
       className="image_styling"
       style={imageStyle}
+      title={title}
     />
   );
 };

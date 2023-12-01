@@ -5,7 +5,7 @@ const Howtoplay = () => {
   return (
     <>
       <div className="page_topcon">
-        <div className="pagebackarrow_con" onClick={() => navigate(-1)}>
+        <div className="pagebackarrow_con" onClick={() => navigate(-1)} title="Go Back">
           <div className="nav_backbtn"></div>
           <div className="pagebt backtext">Back</div>
         </div>

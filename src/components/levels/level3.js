@@ -16,7 +16,7 @@ const Level3 = () => {
 
   //Win Component value
   const src = "/Dashboard/Level5";
-  const num = "3";
+  const num = "4";
 
   //win or lose or Time Up popup function
   const [winmodal, setwinModal] = useState(false);
@@ -191,7 +191,7 @@ const Level3 = () => {
       </div>
       <div className="box_con">
         <div className="drop_box">
-        <div className="box_name">Drop Images here</div>
+        <div className="box_name">Drop Box</div>
           <div className={showline} data-name="box" id="l3b1" ref={drop1}>
             {box1.map((picture) => {
               return (
@@ -289,13 +289,14 @@ const Level3 = () => {
                     id={picture.id}
                     data-name={picture.name}
                     image={picture.image}
+                    title={picture.title}
                   />
                 );
               })}
             </div>
           </div>
 
-          <button onClick={togglefinish} className="finish_btn">
+          <button onClick={togglefinish} className="finish_btn" title="Finish">
             Finish
           </button>
         </div>

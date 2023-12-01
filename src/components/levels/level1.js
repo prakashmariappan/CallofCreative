@@ -139,7 +139,7 @@ const Level1 = () => {
         <div className="nav_logo"></div>
         <div className="nav_right">
           <p className="time_left">Time Left: {timeLeft} seconds</p>
-          <ImageComponent src={imageSrc} />
+          <ImageComponent src={imageSrc}/>
           <button
             onMouseEnter={showlinefun}
             onMouseLeave={hidelinefun}
@@ -149,7 +149,7 @@ const Level1 = () => {
       </div>
       <div className="box_con">
         <div className="drop_box">
-        <div className="box_name">Drop Images here</div>
+        <div className="box_name">Drop Box</div>
           <div className={showline} name="box" id="l1b1" ref={drop1}>
             {box1.map((picture) => {
               return (
@@ -198,12 +198,13 @@ const Level1 = () => {
                     key={picture.id}
                     name={picture.name}
                     image={picture.image}
+                    title={picture.title}
                   />
                 );
               })}
             </div>
           </div>
-          <button onClick={togglefinish} className="finish_btn">
+          <button onClick={togglefinish} className="finish_btn" title="Finish">
             Finish
           </button>
         </div>
@@ -217,5 +218,4 @@ const Level1 = () => {
     </>
   );
 };
-
 export default Level1;

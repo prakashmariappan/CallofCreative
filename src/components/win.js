@@ -75,25 +75,29 @@ const Win = (props) => {
               >
                 Go to Home
               </div>
-              <div className="share" onClick={toggleOptions}></div>
+              <div className="share" onClick={toggleOptions} title="Share"></div>
             </div>
             {showOptions && (
               <div className="share_con">
                 <button
                   className="sm download"
                   onClick={handleDownload}
+                  title="Download"
                 ></button>
                 <button
                   className="sm facebook"
                   onClick={handleShareFacebook}
+                  title="Facebook"
                 ></button>
                 <button
                   className="sm instagram"
                   onClick={handleShareInstagram}
+                  title="Instagram"
                 ></button>
                 <button
                   className="sm whatsapp"
                   onClick={handleShareWhatsApp}
+                  title="WhatsApp"
                 ></button>
               </div>
             )}

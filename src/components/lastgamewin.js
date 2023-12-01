@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { saveAs } from "file-saver";
 import html2canvas from "html2canvas";
 import { useNavigate } from "react-router-dom";
+import Confetti from "./confetti";
 
 const LastWin = (props) => {
   //Show Share Options Function
@@ -45,6 +46,7 @@ const LastWin = (props) => {
     <>
       <div className="modal">
         <div className="overlay">
+          <Confetti/>
           <div className="win_con popup_con" id="levelCompletionBox">
             <div className="score_popup_heading">You Win!!!</div>
             <div className="score_popup_sub_heading">

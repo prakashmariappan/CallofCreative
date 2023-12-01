@@ -193,7 +193,7 @@ const Level5 = () => {
       </div>
       <div className="box_con">
         <div className="drop_box">
-        <div className="box_name">Drop Images here</div>
+        <div className="box_name">Drop Box</div>
           <div className={showline} data-name="box" id="l5b1" ref={drop1}>
             {box1.map((picture) => {
               return (
@@ -285,6 +285,7 @@ const Level5 = () => {
         </div>
         <div className="right_con">
           <div className="drag_box">
+          <div className="box_name">Drag Images from here</div>
             <div className="drag_con">
               {Data.level5.map((picture) => {
                 return (
@@ -293,13 +294,14 @@ const Level5 = () => {
                     key={picture.id}
                     name={picture.name}
                     image={picture.image}
+                    title={picture.title}
                   />
                 );
               })}
             </div>
           </div>
 
-          <button onClick={togglefinish} className="finish_btn">
+          <button onClick={togglefinish} className="finish_btn" title="Finish">
             Finish
           </button>
         </div>

@@ -182,7 +182,7 @@ const Level8 = () => {
       </div>
       <div className="box_con">
         <div className="drop_box">
-        <div className="box_name">Drop Images here</div>
+        <div className="box_name">Drop Box</div>
           <div className="l8_row">
             <div className={showline} name="box" id="l4b1" ref={drop1}>
               {box1.map((picture) => {
@@ -271,13 +271,14 @@ const Level8 = () => {
                     key={picture.id}
                     name={picture.name}
                     image={picture.image}
+                    title={picture.title}
                   />
                 );
               })}
             </div>
           </div>
 
-          <button onClick={togglefinish} className="finish_btn">
+          <button onClick={togglefinish} className="finish_btn" title="Finish">
             Finish
           </button>
         </div>

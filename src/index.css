@@ -1181,7 +1181,6 @@ label {
 }
 
 /*Win & Lose Popup Styling*/
-
 .win_con {
   display: flex;
   align-items: center;
@@ -1199,7 +1198,7 @@ label {
   flex-direction: row;
   align-items: center;
   width: 35%;
-  margin-top: 5%;
+  margin-top: 2%;
   justify-content: space-between;
 }
 .go_to_home {
