@@ -18,6 +18,7 @@ const Dashboard = () => {
         onClick={() => {
           navigate("/Dashboard/Profile", { state: { name, bio } });
         }}
+        title="Profile"
       >
         <div className="profile_btn"></div>
         <div className="prfoile_name">{name}</div>
