@@ -14,6 +14,7 @@ const ImageComponent = (props) => {
         className="timg_btn"
         onMouseEnter={toggleImage}
         onMouseLeave={toggleImage}
+        title="Reference Image"
       ></button>
       <div className="backtext"></div>
       {showImage && (

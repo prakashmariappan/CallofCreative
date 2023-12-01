@@ -139,6 +139,7 @@ const Level4 = () => {
             onMouseEnter={showlinefun}
             onMouseLeave={hidelinefun}
             className="eye_icon navicon"
+            title="Show Structure"
           ></button>
         </div>
       </div>
