@@ -24,7 +24,7 @@ const Dashboard = () => {
       </div>
       <div className="logo_con dash_logo"></div>
       <div className="options_con">
-        <div className="options" onClick={() => navigate("/Dashboard/Level1")}>
+        <div className="options" onClick={() => navigate("/Dashboard/Level1",{ state: { name } })}>
           <div className="option_bg">
             <div className="option_icon icon1"></div>
           </div>
