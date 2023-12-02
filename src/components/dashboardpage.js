@@ -4,8 +4,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Dashboard = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const name = location.state.name;
-  const bio = location.state.bio;
+  const name = location.state.name || "Name Not Found";
+  const bio = location.state.bio || "Bio Not Found";
 
   const [quitgamemodal, setquitgamemodal] = useState(false);
   const Quitgame = () => {

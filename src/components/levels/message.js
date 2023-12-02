@@ -54,7 +54,7 @@ const ContentBox = ({ level, welcomeMessage, route, messages }) => {
 // Define specific instances of the ContentBox component
 const ContentBox1 = () => {
   const location = useLocation();
-  const name = location.state.name;
+  const name = location.state.name || "Name Not Found";
   const level = "Level 1";
   const welcomeMessage = "Hi "+ name + ", Welcome to the World of Heuristic!";
   const route = "/Dashboard/Level1Window";
