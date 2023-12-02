@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 const SelectLevelPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const name = location.state.name;
+  const name = location.state?.name || "Name Not Found";
 
   const handleLevelClick = (level) => {
     navigate(`/Dashboard/Level${level}`, { state: { name } });
