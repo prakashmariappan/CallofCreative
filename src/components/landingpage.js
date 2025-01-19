@@ -46,7 +46,7 @@ const Landingpage = () => {
         </div>
       </div>
       <div className="footer_name">
-        <h1 className="footer_title">Created by Team NetWeavers</h1>
+        <h1 className="footer_title">Created by Prakash Mariappan</h1>
       </div>
       {enterplayermodal && (
         <div className="modal">
